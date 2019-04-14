@@ -3,10 +3,11 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from ass_A.AssA import FSFDP
 
-agg_data: np.ndarray = np.loadtxt("data/Aggregation.txt", delimiter=',')
+agg_data: np.ndarray = np.loadtxt("../data/Aggregation.txt", delimiter=',')
 # print(agg_data)
-# print(agg_data.size)
-# print("Shape: (%d,%d)" % (agg_data.shape[0], agg_data.shape[1]))
+print(agg_data.size)
+print(agg_data.shape)
+print("Shape: (%d,%d)" % (agg_data.shape[0], agg_data.shape[1]))
 
 plt.scatter(agg_data[:, 0], agg_data[:, 1])
 plt.show()
@@ -28,4 +29,4 @@ def distance_calc(x: np.ndarray, y: np.ndarray):
 # FSFDP(agg_data, distance_func=distance_calc, t=0.015, gama_graph=True, cluster_cores=cluster_cores)
 
 cluster_cores = np.array([768, 43, 602, 318, 723, 553, 191])
-FSFDP(agg_data, distance_func=distance_calc, dc=1.84,cluster_cores=cluster_cores, isSave=True)
+FSFDP(agg_data, distance_func=distance_calc, dc=1.84, gama_graph=True, cluster_cores=cluster_cores, isSave=True)

@@ -74,11 +74,12 @@ def FSFDP(agg_data: np.ndarray, distance_func, dc=None, t=0.02, gama_graph: bool
         for i in range(data_n):
             if color_cluster[int(q_of_rou[i])] == -1:
                 color_cluster[int(q_of_rou[i])] = color_cluster[int(relation[int(q_of_rou[i])])]
-        plt.scatter(agg_data[:, 0], agg_data[:, 1], c=color_cluster)
-        # for i in range(cluster_cores.size):
-        #     plt.scatter(agg_data[cluster_cores[i], 0], agg_data[cluster_cores[i], 1], c='', marker='o',
-        #                 edgecolors='r', s=150)
-        plt.show()
+
+        # plt.scatter(agg_data[:, 0], agg_data[:, 1], c=color_cluster)
+        # # for i in range(cluster_cores.size):
+        # #     plt.scatter(agg_data[cluster_cores[i], 0], agg_data[cluster_cores[i], 1], c='', marker='o',
+        # #                 edgecolors='r', s=150)
+        # plt.show()
         if isSave:
             file_data = np.c_[agg_data, color_cluster]
             resultFile = open("result/task1.csv", "w")
@@ -86,3 +87,4 @@ def FSFDP(agg_data: np.ndarray, distance_func, dc=None, t=0.02, gama_graph: bool
                 resultFile.write("%f,%f,%d\n" % (file_data[i][0], file_data[i][1], file_data[i][2]))
             resultFile.close()
             print("Save done")
+        return color_cluster
