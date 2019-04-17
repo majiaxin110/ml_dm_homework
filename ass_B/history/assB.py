@@ -4,10 +4,10 @@ from sklearn.manifold import TSNE
 from ass_A.AssA import FSFDP
 import json
 
-photo_class_file = open("../data/photo_classification.json", "r").read()
+photo_class_file = open("../../data/photo_classification.json", "r").read()
 photo_class = json.loads(photo_class_file)
 
-user_photos_file = open("../data/user_photo_719.json", "r").read()
+user_photos_file = open("../../data/user_photo_719.json", "r").read()
 user_photo = json.loads(user_photos_file)
 
 print("file reading done")
@@ -40,4 +40,6 @@ print("Data transfer done")
 print(result_data.max())
 print("Not classified %d" % not_classified)
 plt.scatter(result_data[:, 0], result_data[:, 1])
+plt.xlabel("Picture")
+plt.ylabel("Food")
 plt.show()

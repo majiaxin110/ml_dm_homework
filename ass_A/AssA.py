@@ -49,6 +49,8 @@ def FSFDP(agg_data: np.ndarray, distance_func, dc=None, t=0.02, gama_graph: bool
 
     # δ也算好了，我们应该可以输出决策图了
     plt.scatter(rou, delta, alpha=0.5)
+    plt.xlabel("ρ")
+    plt.ylabel("δ")
     for i in range(data_n):
         plt.text(rou[i], delta[i], str(i))
     plt.title("Decision Graph")

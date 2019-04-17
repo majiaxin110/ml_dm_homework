@@ -32,11 +32,12 @@ for key in stores_dict:
     else:
         print("One Data Point doesn't have category")
 
+print("总类别数 %d" % len(all_cat))
+
 # 数量前10的类别
 top_cats = sorted(all_cat.items(), key=lambda item: item[1], reverse=True)
 print(top_cats[:10])
-
-# ---- 开始形成三分类用户消费数据----
+# ---- 开始形成三类店铺用户消费数据----
 three_data_result: np.ndarray
 if not os.path.exists("three_cats_data.npy"):
     three_data_result = np.zeros(shape=(0, 3), dtype=np.float)
@@ -101,9 +102,9 @@ else:
     fig = plt.figure()
     ax = Axes3D(fig)
     ax.scatter(three_data_result[:, 0], three_data_result[:, 1], three_data_result[:, 2])
-    ax.set_zlabel('Z', fontdict={'size': 10, 'color': 'red'})
-    ax.set_ylabel('Y', fontdict={'size': 10, 'color': 'red'})
-    ax.set_xlabel('X', fontdict={'size': 10, 'color': 'red'})
+    ax.set_zlabel('L', fontdict={'size': 10, 'color': 'red'})
+    ax.set_ylabel('M', fontdict={'size': 10, 'color': 'red'})
+    ax.set_xlabel('N', fontdict={'size': 10, 'color': 'red'})
     ax.view_init(elev=30, azim=20)
     plt.show()
 

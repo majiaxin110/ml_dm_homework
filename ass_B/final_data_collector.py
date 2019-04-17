@@ -25,13 +25,13 @@ hierarchical_c_result = np.load("Hierarchical/hierarchical_complete_class_result
 spectral_result = np.load("Spectral/spectral_class_result.npy")
 
 # Silhouette Coefficient
-# print("sci2014 score ", metrics.silhouette_score(three_data, sci2014_result, metric="euclidean"))
-# print("KMeans score ", metrics.silhouette_score(three_data, kmeans_result, metric="euclidean"))
-# print("DBSCAN score ", metrics.silhouette_score(three_data, dbscan_result, metric="euclidean"))
-# print("EM-GMM score ", metrics.silhouette_score(three_data, em_gmm_result, metric="euclidean"))
-# print("hierarchical(Average) score ", metrics.silhouette_score(three_data, hierarchical_result, metric="euclidean"))
-# print("hierarchical(Complete) score ", metrics.silhouette_score(three_data, hierarchical_c_result, metric="euclidean"))
-# print("spectral score ", metrics.silhouette_score(three_data, spectral_result, metric="euclidean"))
+print("sci2014 score ", metrics.silhouette_score(three_data, sci2014_result, metric="euclidean"))
+print("KMeans score ", metrics.silhouette_score(three_data, kmeans_result, metric="euclidean"))
+print("DBSCAN score ", metrics.silhouette_score(three_data, dbscan_result, metric="euclidean"))
+print("EM-GMM score ", metrics.silhouette_score(three_data, em_gmm_result, metric="euclidean"))
+print("hierarchical(Average) score ", metrics.silhouette_score(three_data, hierarchical_result, metric="euclidean"))
+print("hierarchical(Complete) score ", metrics.silhouette_score(three_data, hierarchical_c_result, metric="euclidean"))
+print("spectral score ", metrics.silhouette_score(three_data, spectral_result, metric="euclidean"))
 
 # 组合得到最终数据
 json_file = open("each_line_id.json", "r").read()

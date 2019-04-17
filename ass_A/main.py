@@ -29,4 +29,6 @@ def distance_calc(x: np.ndarray, y: np.ndarray):
 # FSFDP(agg_data, distance_func=distance_calc, t=0.015, gama_graph=True, cluster_cores=cluster_cores)
 
 cluster_cores = np.array([768, 43, 602, 318, 723, 553, 191])
-FSFDP(agg_data, distance_func=distance_calc, dc=1.84, gama_graph=True, cluster_cores=cluster_cores, isSave=True)
+cluster_result = FSFDP(agg_data, distance_func=distance_calc, dc=1.84, gama_graph=True, cluster_cores=cluster_cores)
+plt.scatter(agg_data[:, 0], agg_data[:, 1], c=cluster_result)
+plt.show()
